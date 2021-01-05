@@ -1,4 +1,4 @@
-#Transfer Learning for Image Classification
+# Transfer Learning for Image Classification
 
 In this tutorial, you will learn classify images by using transfer learning from a pre-trained Convolutional Neural Network (CNN).
 
@@ -8,7 +8,7 @@ In practice, very few people train an entire CNN from scratch (with random initi
 
 The intuition behind transfer learning for image classification is that if a model is trained on a large and general enough dataset, this model will effectively serve as a **generic model of the visual world**. You can then take advantage of these learned feature maps without having to start from scratch by training a large model on a large dataset.
 
-![Alt text](md_images/cnn_featuremaps.png?raw=true "cnn_featuremaps")
+![Alt text](md_images/cnn_featuremaps.png?raw=true "cnn_featuremaps")<br/>
 [Source: S. Vignesh](https://medium.com/analytics-vidhya/the-world-through-the-eyes-of-cnn-5a52c034dbeb)
 
 Two major transfer learning scenarios look as follows:
@@ -21,10 +21,11 @@ Once upon a time, in Year 2013 I was working on backpack classification task:
 ![Alt text](md_images/backpack_classification.jpg?raw=true "backpack_classifcation")
 
 
-##When to use transfer learning?
+## When to use transfer learning?
 CNN features are more generic in early layers and more original-dataset-specific in later layers. Here are some some common rules of thumb:
 
-![Alt text](md_images/when_to_use_TL.jpg?raw=true "whentouseTL")
+![Alt text](md_images/when_to_use_TL.jpg?raw=true "whentouseTL")<br/>
 [Source: Stanford CS231n](https://cs231n.github.io/)
+
 Similar dataset - ImageNet-like natural scene images
 Different dataset - microscope images, X-ray images

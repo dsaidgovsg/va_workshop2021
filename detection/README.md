@@ -42,10 +42,10 @@ For more detailed explanations please refer to:
 1. https://blog.zenggyu.com/en/post/2018-12-16/an-introduction-to-evaluation-metrics-for-object-detection/
 2. https://github.com/rafaelpadilla/Object-Detection-Metrics
 
-##Basic Concepts
-###Intersection Over Union (IOU)
-IOU measures the overlap between two bounding boxes. IOU between a ground truth bounding box (in green) and a detected bounding box (in red).
-  ![Alt text](md_images/iou.png?raw=true "iou")
+## Basic Concepts
+### Intersection Over Union (IOU)
+IOU measures the overlap between two bounding boxes. IOU between a ground truth bounding box (in green) and a detected bounding box (in red).<br/>
+![Alt text](md_images/iou.png?raw=true "iou")
 
 ### True Positive (TP), False Positive(FP), False Negative (FN)  
 - *True Positive (TP)*: A correct detection. Detection with IOU ≥ threshold
@@ -55,25 +55,25 @@ IOU measures the overlap between two bounding boxes. IOU between a ground truth 
 
 threshold: depending on the metric, it is usually set to 50%, 75% or 95%.
 
-###Precision
+### Precision
 Precision is the ability of a model to identify only the relevant objects. It is the percentage of correct positive predictions and is given by:
 ![Alt text](md_images/Precision.jpg?raw=true "precision")
 
-###Recall
-Recall is the ability of a model to find all the relevant cases (all ground truth bounding boxes). It is the percentage of true positive detected among all relevant ground truths and is given by:
+### Recall
+Recall is the ability of a model to find all the relevant cases (all ground truth bounding boxes). It is the percentage of true positive detected among all relevant ground truths and is given by:<br/>
 ![Alt text](md_images/Recall.jpg?raw=true "recall")
 
-##Precision-Recall Curve
+## Precision-Recall Curve
 By setting the threshold for confidence score at different levels, we get different pairs of precision and recall:
-![Alt text](md_images/PR_curve.gif?raw=true "pr_curve")
+![Alt text](md_images/PR_curve.gif?raw=true "pr_curve")<br/>
 Note that as the threshold for confidence score decreases, recall increases monotonically; precision can go up and down (goes down with FPs and goes up again with TPs.), but the general tendency is to decrease.
 
-##Average Precision (AP)
-Comparing different curves (different detectors) is not an easy task. Therefore, average precision is used to calculate the area under the PR-curve. In essense, AO us the precision averaged across all unique recall levels. The curve can be interpolated using 11-point interpolation: precision is averaged at a set of eleven equally spaced recall levels [0, 0.1, 0.2, ..., 1] or at all unique recall levels presented by the data as the follows:
+## Average Precision (AP)
+Comparing different curves (different detectors) is not an easy task. Therefore, average precision is used to calculate the area under the PR-curve. In essense, AO us the precision averaged across all unique recall levels. The curve can be interpolated using 11-point interpolation: precision is averaged at a set of eleven equally spaced recall levels [0, 0.1, 0.2, ..., 1] or at all unique recall levels presented by the data as the follows:<br/>
 ![Alt text](md_images/AP_interpolation.gif?raw=true "ap_interpolation")
 
-##Mean Average Precision (mAP)
-The calculation of AP only involves one class. However, in object detection there are usually more than one class (K>1). mAP is defined as the mean of all AP across all K classes. Note that mAP also depends on the IOU threshold used. Higher IOU threshold (stricter) will result in lower mAP. Typically, mAP reported will be at certain IOU threshold (e.g. mAP@IoU=0.5, mAP@IoU=0.75)
+## Mean Average Precision (mAP)
+The calculation of AP only involves one class. However, in object detection there are usually more than one class (K>1). mAP is defined as the mean of all AP across all K classes. Note that mAP also depends on the IOU threshold used. Higher IOU threshold (stricter) will result in lower mAP. Typically, mAP reported will be at certain IOU threshold (e.g. mAP@IoU=0.5, mAP@IoU=0.75).<br/>
 ![Alt text](md_images/PR-curve-at-diff-IOUs.png?raw=true "pr_diff_iou")
 
 
@@ -82,7 +82,7 @@ For this demo, we will be using popular YOLOv3 Darknet implementation from https
 
 
 ## Data Preparation
-In this tutorial, we will be using logo dataset which contains 100 images from two classes: McDonalds and Starbucks. You may download them from XXXX
+In this tutorial, we will be using logo dataset which contains 100 images from two classes: McDonalds and Starbucks. You may download them from this [link](https://drive.google.com/file/d/112pZx-vRgh7TBVfnryPA-IJ2TGF8cFgY/view?usp=sharing).
 
 YOLO Darknet requires a .txt file for each image with a line for each ground truth object in the image that looks like:
 ```
@@ -94,10 +94,10 @@ where:
 
 To annotate the images, we could use the following annotation tools that support YOLO format:
 1. VideoIO - developed by in-house VA team, please request a copy from https://go.gov.sg/szh5nk
-BONUS: VideoIO comes with built-in object classification and detection (YOLOv3) capabilities!
+BONUS: VideoIO comes with built-in object classification and detection (YOLOv3) capabilities!<br/>
 ![Alt text](md_images/videoio_demo.jpg?raw=true "videoiodemo")
 
-2. labelimg - open source tool https://github.com/tzutalin/labelImg
+2. labelimg - open source tool https://github.com/tzutalin/labelImg<br/>
 ![Alt text](md_images/labelimg_demo.jpg?raw=true "labelimgdemo")
 
 Once the images have been annotated, we can split the images into two sets using the **splitTrainAndTest.py** scripts:
@@ -125,7 +125,7 @@ valid = /path/to/image_dataset/logo_test.txt
 names = /path/to/image_dataset/logo.names
 backup = backup/
 ```
-3. **yolov3-tiny.cfg** - this is the config file that defines model architecture and training hyperparameters. In Darknet repo, there are many different models to choose from, in particular, there are for variants of yolov3:
+3. **yolov3-tiny.cfg** - this is the config file that defines model architecture and training hyperparameters. In Darknet repo, there are many different models to choose from, in particular, there are four variants of yolov3 configurations:
 * `yolov3-openimages.cfg` (247 MB COCO **Yolo v3**) - requires 4 GB GPU-RAM: https://pjreddie.com/media/files/yolov3-openimages.weights
 * `yolov3-spp.cfg` (240 MB COCO **Yolo v3**) - requires 4 GB GPU-RAM: https://pjreddie.com/media/files/yolov3-spp.weights
 * `yolov3.cfg` (236 MB COCO **Yolo v3**) - requires 4 GB GPU-RAM: https://pjreddie.com/media/files/yolov3.weights
@@ -178,7 +178,7 @@ angle, saturation, exposure, hue: data augmentation to randomly transform traini
 - **max_batches**: maximum number of training iterations, set to 3000 for this demo.
 - **policy, steps, scales**: control how learning rate is  decreased over iterations, e.g. learning rate starts at 0.001 and decreased to 0.001 x scales after iteration 2000.
 
-#What's Next
+# What's Next
 1. Try out Tensorflow Object Detection API https://tensorflow-object-detection-api-tutorial.readthedocs.io/en/latest/
 2. Try out latest YOLOv5 https://github.com/ultralytics/yolov5
-3. Use Tensorboard to visualise metrics such as loss and accuracy during training https://www.tensorflow.org/tensorboard
+3. Build video processing pipeline by adding object tracker such as DeepSORT https://github.com/nwojke/deep_sort
