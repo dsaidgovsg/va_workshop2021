@@ -25,7 +25,7 @@ Once upon a time, in Year 2013 I was working on backpack classification task:
 CNN features are more generic in early layers and more original-dataset-specific in later layers. Here are some some common rules of thumb:
 
 ![Alt text](md_images/when_to_use_TL.jpg?raw=true "whentouseTL")<br/>
-[Source: Stanford CS231n](https://cs231n.github.io/)
+[Source: Stanford CS231n](https://cs231n.github.io/)<br/>
 
-Similar dataset - ImageNet-like natural scene images
+Similar dataset - ImageNet-like natural scene images<br/>
 Different dataset - microscope images, X-ray images

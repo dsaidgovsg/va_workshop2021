@@ -1,4 +1,4 @@
-#Object Detection
+# Object Detection
 
 Object detection is the task of detecting instances of objects of a certain class within an image. The state-of-the-art deep learning methods can be categorized into two main types: one-stage methods and two stage-methods. One-stage methods prioritize inference speed, and example models include YOLO, SSD and RetinaNet. Two-stage methods prioritize detection accuracy, and example models include Faster R-CNN, Mask R-CNN and Cascade R-CNN.
 
@@ -93,7 +93,7 @@ where:
 - x, y, width, height: float values relative to the image's width and height between 0 to 1. Note that x and y are center of rectangle (not top-left corner)
 
 To annotate the images, we could use the following annotation tools that support YOLO format:
-1. VideoIO - developed by in-house VA team, please request a copy from https://go.gov.sg/szh5nk
+1. VideoIO - developed by in-house VA team, please request a copy from https://go.gov.sg/szh5nk<br/>
 BONUS: VideoIO comes with built-in object classification and detection (YOLOv3) capabilities!<br/>
 ![Alt text](md_images/videoio_demo.jpg?raw=true "videoiodemo")
 
