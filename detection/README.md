@@ -63,16 +63,16 @@ Precision is the ability of a model to identify only the relevant objects. It is
 Recall is the ability of a model to find all the relevant cases (all ground truth bounding boxes). It is the percentage of true positive detected among all relevant ground truths and is given by:<br/>
 ![Alt text](md_images/Recall.jpg?raw=true "recall")
 
-## Precision-Recall Curve
+### Precision-Recall Curve
 By setting the threshold for confidence score at different levels, we get different pairs of precision and recall:
 ![Alt text](md_images/PR_curve.gif?raw=true "pr_curve")<br/>
 Note that as the threshold for confidence score decreases, recall increases monotonically; precision can go up and down (goes down with FPs and goes up again with TPs.), but the general tendency is to decrease.
 
-## Average Precision (AP)
+### Average Precision (AP)
 Comparing different curves (different detectors) is not an easy task. Therefore, average precision is used to calculate the area under the PR-curve. In essense, AO us the precision averaged across all unique recall levels. The curve can be interpolated using 11-point interpolation: precision is averaged at a set of eleven equally spaced recall levels [0, 0.1, 0.2, ..., 1] or at all unique recall levels presented by the data as the follows:<br/>
 ![Alt text](md_images/AP_interpolation.gif?raw=true "ap_interpolation")
 
-## Mean Average Precision (mAP)
+### Mean Average Precision (mAP)
 The calculation of AP only involves one class. However, in object detection there are usually more than one class (K>1). mAP is defined as the mean of all AP across all K classes. Note that mAP also depends on the IOU threshold used. Higher IOU threshold (stricter) will result in lower mAP. Typically, mAP reported will be at certain IOU threshold (e.g. mAP@IoU=0.5, mAP@IoU=0.75).<br/>
 ![Alt text](md_images/PR-curve-at-diff-IOUs.png?raw=true "pr_diff_iou")
 
@@ -94,10 +94,10 @@ where:
 
 To annotate the images, we could use the following annotation tools that support YOLO format:
 1. VideoIO - developed by in-house VA team, please request a copy from https://go.gov.sg/szh5nk<br/>
-BONUS: VideoIO comes with built-in object classification and detection (YOLOv3) capabilities!<br/>
+BONUS: VideoIO comes with built-in object classification and detection (YOLOv3) capabilities!<br/><br/>
 ![Alt text](md_images/videoio_demo.jpg?raw=true "videoiodemo")
 
-2. labelimg - open source tool https://github.com/tzutalin/labelImg<br/>
+2. labelimg - open source tool https://github.com/tzutalin/labelImg<br/><br/>
 ![Alt text](md_images/labelimg_demo.jpg?raw=true "labelimgdemo")
 
 Once the images have been annotated, we can split the images into two sets using the **splitTrainAndTest.py** scripts:
