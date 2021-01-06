@@ -93,7 +93,7 @@ where:
 - x, y, width, height: float values relative to the image's width and height between 0 to 1. Note that x and y are center of rectangle (not top-left corner)
 
 To annotate the images, we could use the following annotation tools that support YOLO format:
-1. VideoIO - developed by in-house VA team, please request a copy from https://go.gov.sg/szh5nk<br/> and install in Windows.
+1. VideoIO - developed by in-house VA team, please request a copy from https://go.gov.sg/szh5nk and install in Windows.<br/>
 BONUS: VideoIO comes with built-in object classification and detection (YOLOv3) capabilities!<br/><br/>
 ![Alt text](md_images/videoio_demo.jpg?raw=true "videoiodemo")
 
