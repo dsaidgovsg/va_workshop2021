@@ -69,7 +69,7 @@ By setting the threshold for confidence score at different levels, we get differ
 Note that as the threshold for confidence score decreases, recall increases monotonically; precision can go up and down (goes down with FPs and goes up again with TPs.), but the general tendency is to decrease.
 
 ### Average Precision (AP)
-Comparing different curves (different detectors) is not an easy task. Therefore, average precision is used to calculate the area under the PR-curve. In essense, AO us the precision averaged across all unique recall levels. The curve can be interpolated using 11-point interpolation: precision is averaged at a set of eleven equally spaced recall levels [0, 0.1, 0.2, ..., 1] or at all unique recall levels presented by the data as the follows:<br/>
+Comparing different curves (different detectors) is not an easy task. Therefore, average precision is used to calculate the area under the PR-curve. In essense, AP uses the precision averaged across all unique recall levels. The curve can be interpolated using 11-point interpolation: precision is averaged at a set of eleven equally spaced recall levels [0, 0.1, 0.2, ..., 1] or at all unique recall levels presented by the data as the follows:<br/>
 ![Alt text](md_images/AP_interpolation.gif?raw=true "ap_interpolation")
 
 ### Mean Average Precision (mAP)
