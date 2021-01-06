@@ -31,7 +31,7 @@ Object detection is the task of detecting instances of objects of a certain clas
         ![Alt text](md_images/twostage.jpg?raw=true "twostagemethods")
     * Examples: R-CNN, Fast R-CNN, Faster R-CNN
 * One-stage methods (aka Single-shot)
-    * The tasks of object localization and classification are fone in a single forward pass of the network
+    * The tasks of object localization and classification are done in a single forward pass of the network
     * Prioritize inference speed
     ![Alt text](md_images/onestage.jpg?raw=true "onestagemethods")
     * Examples: Single Shot Detector (SSD), You Only Look Once (YOLO)
